@@ -34,7 +34,8 @@
   },
   "eslintConfig": {
     "extends": "universe/native",
-    "root": true
+    "root": true,
+    "endOfLine": "lf"
   },
   "main": "node_modules/expo/AppEntry.js",
   "expo": {
