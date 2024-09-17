@@ -7,14 +7,16 @@ import { styles } from './style';
 export function HeaderFeature({
   backgroundColor,
   text,
+  textColor,
 }: {
   text: string;
   backgroundColor: string;
+  textColor?: string;
 }) {
   return (
     <>
       <View style={[styles.container, { backgroundColor }]}>
-        <Text style={styles.text}>{text}</Text>
+        <Text style={[styles.text, { color: textColor }]}>{text}</Text>
       </View>
     </>
   );
