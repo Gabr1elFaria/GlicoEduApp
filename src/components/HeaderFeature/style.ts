@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
   },
   text: {
-    fontSize: 22,
-    fontWeight: '600',
+    fontSize: 26,
+    fontWeight: '800',
   },
 });
