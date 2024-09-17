@@ -13,48 +13,39 @@ export const style = StyleSheet.create({
 });
 
 export const featureBox = StyleSheet.create({
-  boxCalculator: {
+  box: {
     height: 50,
     width: 130,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: '#CC5FEB',
-    borderColor: '#CC5FEB',
     paddingLeft: 2,
     paddingRight: 2,
     paddingBottom: 2,
     borderWidth: 1,
     borderRadius: 5,
   },
+  boxCalculator: {
+    justifyContent: 'space-around',
+    backgroundColor: '#CC5FEB',
+    borderColor: '#CC5FEB',
+    paddingLeft: 2,
+    paddingRight: 2,
+    paddingBottom: 2,
+  },
   boxRecipe: {
-    height: 50,
-    width: 130,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
-    gap: 10,
     backgroundColor: '#00A0FF',
-    borderWidth: 1,
-    borderRadius: 5,
     borderColor: '#00A0FF',
     paddingLeft: 5,
     paddingRight: 5,
+    gap: 10,
   },
   boxQuiz: {
-    height: 50,
-    width: 130,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#00CFBE',
     borderColor: '#00CFBE',
     gap: 10,
-    borderWidth: 1,
-    borderRadius: 5,
   },
 });
 
@@ -65,21 +56,13 @@ export const featureText = StyleSheet.create({
   },
   textCalculator: {
     display: 'flex',
-    alignItems: 'flex-start',
+    textAlign: 'center',
     width: 90,
-    fontSize: 20,
-    fontWeight: '500',
   },
 });
 
 export const featureIcon = StyleSheet.create({
-  Calc: {
-    fontSize: 35,
-  },
-  Receipes: {
-    fontSize: 35,
-  },
-  Quiz: {
+  Icon: {
     fontSize: 35,
   },
 });

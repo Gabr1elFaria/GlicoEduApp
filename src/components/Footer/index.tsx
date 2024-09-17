@@ -16,23 +16,25 @@ export default function Footer() {
     <>
       <View style={style.container}>
         <TouchableOpacity onPress={() => navigation.navigate('Calculadora')}>
-          <View style={featureBox.boxCalculator}>
-            <Text style={featureText.textCalculator}>Calculadora de Insulina</Text>
-            <IconCalculator style={featureIcon.Calc} name="calculator" />
+          <View style={[featureBox.box, featureBox.boxCalculator]}>
+            <Text style={[featureText.text, featureText.textCalculator]}>
+              Calculadora de Insulina
+            </Text>
+            <IconCalculator style={featureIcon.Icon} name="calculator" />
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('Receitas')}>
-          <View style={featureBox.boxRecipe}>
+          <View style={[featureBox.box, featureBox.boxRecipe]}>
             <Text style={featureText.text}>Receitas</Text>
-            <IconCutlery name="cutlery" style={featureIcon.Receipes} />
+            <IconCutlery name="cutlery" style={featureIcon.Icon} />
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('Quiz')}>
-          <View style={featureBox.boxQuiz}>
+          <View style={[featureBox.box, featureBox.boxQuiz]}>
             <Text style={featureText.text}>Quiz</Text>
-            <IconQuiz name="chat" style={featureIcon.Quiz} />
+            <IconQuiz name="chat" style={featureIcon.Icon} />
           </View>
         </TouchableOpacity>
       </View>
