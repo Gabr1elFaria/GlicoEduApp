@@ -1,8 +1,10 @@
-import { ViewStyle } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 export const style = StyleSheet.create({
-  mainContainer: {},
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+  },
   container: {
     width: 'auto',
     height: 300,
@@ -49,5 +51,7 @@ export const style = StyleSheet.create({
     height: 40,
     padding: -5,
   },
-  buttonDisable: {},
+  buttonDisable: {
+    borderRadius: 10,
+  },
 });

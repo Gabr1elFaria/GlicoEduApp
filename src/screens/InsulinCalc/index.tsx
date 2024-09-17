@@ -56,7 +56,7 @@ export function InsulinCalc() {
 
   return (
     <TouchableWithoutFeedback onPress={handleTouchOutside}>
-      <View style={{ flex: 1 }}>
+      <View style={style.mainContainer}>
         <Header />
         <HeaderFeature backgroundColor="#E069E0" text="CALCULADORA DE INSULINA" />
         <View style={style.mainContainer}>
