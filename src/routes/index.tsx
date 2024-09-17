@@ -9,6 +9,7 @@ import { Recipes } from '~/screens/Recipes';
 import Footer from '~/components/Footer';
 import { SafeAreaView, View } from 'react-native';
 import { styles } from '~/screens/Home/style';
+import { FAQ } from '~/screens/FAQ';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   Quiz: undefined;
   Receitas: undefined;
   Footer: undefined;
+  FAQ: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -32,14 +34,8 @@ export default function Routes() {
         <Stack.Screen name="Quiz" component={Quiz} />
         <Stack.Screen name="Receitas" component={Recipes} />
         <Stack.Screen name="Footer" component={Footer} />
+        <Stack.Screen name="FAQ" component={FAQ} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
-{
-  /* <Stack.Navigator
-screenOptions={{
-  title: '',
-  header: () => <Header />,
-}}> */
 }
