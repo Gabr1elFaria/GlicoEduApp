@@ -8,6 +8,7 @@ import { HeaderFeature } from '~/components/HeaderFeature';
 import { style, accordion } from './style';
 import Accordion from '~/components/Accordion/accordion';
 import AccordionContent from '~/components/Accordion/accordionContent';
+import { Recipe } from '~/components/Recipe';
 
 import IconMug from 'react-native-vector-icons/FontAwesome5';
 import IconSun from 'react-native-vector-icons/Feather';
@@ -104,7 +105,7 @@ export function Recipes() {
             </Accordion>
           </View>
           <View style={accordion.accordion}>
-            <Accordion title="Refeição">
+            <Accordion title="Índice Glicêmico">
               <AccordionContent
                 icon={
                   <View style={{ marginLeft: 4, marginTop: 3 }}>
@@ -151,6 +152,7 @@ export function Recipes() {
             </Accordion>
           </View>
         </View>
+        <Recipe />
         <Footer />
       </View>
     </TouchableWithoutFeedback>
