@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 export const style = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    width: 'auto',
     backgroundColor: '#FFFFFF',
   },
   containerOne: {
@@ -25,7 +26,6 @@ export const style = StyleSheet.create({
     paddingHorizontal: 10,
     textAlign: 'left',
   },
-  InputContainer: {},
   buttonText: {
     fontSize: 18,
     fontWeight: '500',
@@ -49,5 +49,29 @@ export const style = StyleSheet.create({
   iconStyle: {
     marginLeft: 5,
     marginRight: -2,
+  },
+});
+
+export const accordion = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: 'auto',
+    borderWidth: 1,
+  },
+  accordion: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: 150,
+  },
+  text: {
+    marginLeft: 20,
+    marginTop: 5,
+    fontSize: 22,
+    fontWeight: '600',
+  },
+  box: {
+    display: 'flex',
+    flexDirection: 'row',
   },
 });
