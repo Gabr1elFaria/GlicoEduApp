@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Bolo de Banana",
+    "image": "bolo_banana.jpg",
+    "ingredients": ["bananas maduras", "farinha de trigo", "ovos", "açúcar", "fermento"],
+    "instructions": ["Misture os ingredientes", "Asse em forno pré-aquecido"],
+    "category": {
+      "meal": "lanche",
+      "glicRate": "medio"
+    }
+  },
+  {
+    "title": "Salada Caesar",
+    "image": "salada_caesar.jpg",
+    "ingredients": ["alface romana", "croutons", "queijo parmesão", "frango grelhado"],
+    "instructions": ["Lave a alface", "Misture todos os ingredientes"],
+    "category": {
+      "meal": "almoco",
+      "glicRate": "baixo"
+    }
+  },
+  {
+    "title": "Bolo de Maça",
+    "image": "bolo_banana.jpg",
+    "ingredients": ["bananas maduras", "farinha de trigo", "ovos", "açúcar", "fermento"],
+    "instructions": ["Misture os ingredientes", "Asse em forno pré-aquecido"],
+    "category": {
+      "meal": "janta",
+      "glicRate": "medio"
+    }
+  },
+  {
+    "title": "Salada",
+    "image": "salada_caesar.jpg",
+    "ingredients": ["alface romana", "croutons", "queijo parmesão", "frango grelhado"],
+    "instructions": ["Lave a alface", "Misture todos os ingredientes"],
+    "category": {
+      "meal": "cafe",
+      "glicRate": "baixo"
+    }
+  },
+  {
+    "title": "Bolo de Manga",
+    "image": "bolo_banana.jpg",
+    "ingredients": ["bananas maduras", "farinha de trigo", "ovos", "açúcar", "fermento"],
+    "instructions": ["Misture os ingredientes", "Asse em forno pré-aquecido"],
+    "category": {
+      "meal": "lanche",
+      "glicRate": "medio"
+    }
+  },
+  {
+    "title": "Salada Um",
+    "image": "salada_caesar.jpg",
+    "ingredients": ["alface romana", "croutons", "queijo parmesão", "frango grelhado"],
+    "instructions": ["Lave a alface", "Misture todos os ingredientes"],
+    "category": {
+      "meal": "almoco",
+      "glicRate": "baixo"
+    }
+  }
+]
