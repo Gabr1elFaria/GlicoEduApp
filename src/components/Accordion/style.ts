@@ -17,12 +17,13 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingLeft: 10,
+    paddingLeft: 15,
     gap: 10,
   },
   textTitle: {
     fontSize: 20,
     fontWeight: '500',
+    textAlign: 'center',
   },
   mainIcon: {
     display: 'flex',
