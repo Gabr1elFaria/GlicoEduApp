@@ -10,6 +10,7 @@ import Footer from '~/components/Footer';
 import { SafeAreaView, View } from 'react-native';
 import { styles } from '~/screens/Home/style';
 import { FAQ } from '~/screens/FAQ';
+import { RecipesInstruction } from '~/screens/Recipes/RecipesInstruction';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   Receitas: undefined;
   Footer: undefined;
   FAQ: undefined;
+  ReceitasItSelf: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -35,6 +37,7 @@ export default function Routes() {
         <Stack.Screen name="Receitas" component={Recipes} />
         <Stack.Screen name="Footer" component={Footer} />
         <Stack.Screen name="FAQ" component={FAQ} />
+        <Stack.Screen name="ReceitasItSelf" component={RecipesInstruction} />
       </Stack.Navigator>
     </NavigationContainer>
   );
