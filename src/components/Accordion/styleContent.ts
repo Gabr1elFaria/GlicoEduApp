@@ -5,6 +5,8 @@ export const style = StyleSheet.create({
     marginTop: -10,
     fontSize: 22,
     fontWeight: '500',
+    textAlign: 'center',
+    width: 100,
   },
   textBox: {
     display: 'flex',
@@ -23,5 +25,7 @@ export const style = StyleSheet.create({
     display: 'flex',
     width: 40,
     height: 40,
+    marginLeft: 4,
+    marginTop: 3,
   },
 });
