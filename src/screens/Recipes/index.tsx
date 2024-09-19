@@ -10,11 +10,15 @@ import Accordion from '~/components/Accordion/accordion';
 import AccordionContentGlicRate from '~/components/Accordion/accordionContentGlicRate';
 import AccordionContentMeal from '~/components/Accordion/accordionContentMeal';
 import { Recipe } from '~/components/Recipe';
+import { useGlicRateHeight } from '~/providers/GlicRateHeightProvider';
+import { useMealHeight } from '~/providers/MealHeightProvider';
 
 export function Recipes() {
   const inputRef = useRef<TextInput | null>(null);
   const [enable, setEnable] = useState(false);
   const [inputValue, setInputValue] = useState('');
+  const { setHeightGlicRate } = useGlicRateHeight();
+  const { setHeightMeal } = useMealHeight();
 
   const handleTouchOutside = () => {
     Keyboard.dismiss();
@@ -33,6 +37,22 @@ export function Recipes() {
       console.log(inputValue);
     }
   }, [inputValue]);
+
+  const handlePressAccordionGlicRate = (isOpen: boolean) => {
+    if (setHeightGlicRate) {
+      setHeightGlicRate(isOpen);
+    } else {
+      console.error('GlicRateHeightContext is not available.');
+    }
+  };
+
+  const handlePressAccordionMeal = (isOpen: boolean) => {
+    if (setHeightMeal) {
+      setHeightMeal(isOpen);
+    } else {
+      console.error('MealHeightContext is not available.');
+    }
+  };
 
   return (
     <TouchableWithoutFeedback onPress={handleTouchOutside}>
@@ -63,12 +83,12 @@ export function Recipes() {
         <View style={accordion.container}>
           <Text style={accordion.text}>Filtrar por:</Text>
           <View style={accordion.accordion}>
-            <Accordion title="Refeição">
+            <Accordion title="Refeição" onToggle={handlePressAccordionMeal}>
               <AccordionContentMeal />
             </Accordion>
           </View>
           <View style={accordion.accordion}>
-            <Accordion title="Índice Glicêmico">
+            <Accordion title="Índice Glicêmico" onToggle={handlePressAccordionGlicRate}>
               <AccordionContentGlicRate />
             </Accordion>
           </View>
