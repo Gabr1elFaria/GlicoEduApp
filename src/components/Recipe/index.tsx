@@ -9,6 +9,9 @@ import IconApple from 'react-native-vector-icons/FontAwesome';
 import IconSuperSmile from 'react-native-vector-icons/Fontisto';
 import IconSmile from 'react-native-vector-icons/Fontisto';
 
+import { useRecipeGlicFilter } from '~/providers/RecipeGlicFilterProvider';
+import { useRecipeMealFilter } from '~/providers/RecipeMealFilterProvider';
+
 interface Receita {
   key: number;
   title: string;
@@ -23,15 +26,33 @@ interface Receita {
 
 export function Recipe() {
   const [receitas, setReceitas] = useState<Receita[]>([]);
+  const { lowGlic, mediumGlic } = useRecipeGlicFilter();
+  const { breakfest, lunch, dinner, snack } = useRecipeMealFilter();
 
   useEffect(() => {
     const data = require('../../assets/recipes.json');
     setReceitas(data);
   }, []);
 
+  const filteredReceitas = receitas.filter((receita) => {
+    const glicRateMatch =
+      (lowGlic && receita.category.glicRate === 'baixo') ||
+      (mediumGlic && receita.category.glicRate === 'medio');
+
+    const mealMatch =
+      (breakfest && receita.category.meal === 'cafe') ||
+      (lunch && receita.category.meal === 'almoco') ||
+      (dinner && receita.category.meal === 'janta') ||
+      (snack && receita.category.meal === 'lanche');
+
+    return (
+      (glicRateMatch || (!lowGlic && !mediumGlic)) &&
+      (mealMatch || (!breakfest && !lunch && !dinner && !snack))
+    );
+  });
   return (
     <>
-      {receitas.map((receita) => (
+      {filteredReceitas.map((receita) => (
         <View key={receita.title} style={style.container}>
           <View style={style.containerText}>
             <Text style={style.text}>
