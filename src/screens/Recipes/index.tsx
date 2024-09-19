@@ -7,15 +7,9 @@ import { Header } from '~/components/Header';
 import { HeaderFeature } from '~/components/HeaderFeature';
 import { style, accordion } from './style';
 import Accordion from '~/components/Accordion/accordion';
-import AccordionContent from '~/components/Accordion/accordionContent';
+import AccordionContentGlicRate from '~/components/Accordion/accordionContentGlicRate';
+import AccordionContentMeal from '~/components/Accordion/accordionContentMeal';
 import { Recipe } from '~/components/Recipe';
-
-import IconMug from 'react-native-vector-icons/FontAwesome5';
-import IconSun from 'react-native-vector-icons/Feather';
-import IconMoon from 'react-native-vector-icons/Feather';
-import IconApple from 'react-native-vector-icons/FontAwesome';
-import IconSuperSmile from 'react-native-vector-icons/Fontisto';
-import IconSmile from 'react-native-vector-icons/Fontisto';
 
 export function Recipes() {
   const inputRef = useRef<TextInput | null>(null);
@@ -70,85 +64,12 @@ export function Recipes() {
           <Text style={accordion.text}>Filtrar por:</Text>
           <View style={accordion.accordion}>
             <Accordion title="Refeição">
-              <AccordionContent
-                icon={
-                  <View style={{ marginLeft: 4 }}>
-                    <IconMug name="mug-hot" size={30} />
-                  </View>
-                }
-                text="Café da Manhã"
-              />
-              <AccordionContent
-                icon={
-                  <View style={{ marginTop: 3 }}>
-                    <IconSun name="sun" size={30} />
-                  </View>
-                }
-                text="Almoço"
-              />
-              <AccordionContent
-                icon={
-                  <View style={{ marginTop: 3, marginLeft: 4 }}>
-                    <IconMoon name="moon" size={30} />
-                  </View>
-                }
-                text="Janta"
-              />
-              <AccordionContent
-                icon={
-                  <View style={{ marginTop: 3, marginLeft: 8 }}>
-                    <IconApple name="apple" size={30} />
-                  </View>
-                }
-                text="Lanche"
-              />
+              <AccordionContentMeal />
             </Accordion>
           </View>
           <View style={accordion.accordion}>
             <Accordion title="Índice Glicêmico">
-              <AccordionContent
-                icon={
-                  <View style={{ marginLeft: 4, marginTop: 3 }}>
-                    <IconSuperSmile name="smiley" size={30} />
-                  </View>
-                }
-                text={
-                  <View>
-                    <Text
-                      style={{
-                        fontSize: 22,
-                        fontWeight: '500',
-                        textAlign: 'center',
-                        width: 100,
-                        marginTop: 5,
-                        marginBottom: 0,
-                      }}>
-                      Baixo Índice Glicêmico
-                    </Text>
-                  </View>
-                }
-              />
-              <AccordionContent
-                icon={
-                  <View style={{ marginLeft: 4, marginTop: 3 }}>
-                    <IconSmile name="slightly-smile" size={30} />
-                  </View>
-                }
-                text={
-                  <View>
-                    <Text
-                      style={{
-                        fontSize: 22,
-                        fontWeight: '500',
-                        textAlign: 'center',
-                        width: 105,
-                        marginTop: 3,
-                      }}>
-                      Médio Índice Glicêmico
-                    </Text>
-                  </View>
-                }
-              />
+              <AccordionContentGlicRate />
             </Accordion>
           </View>
         </View>

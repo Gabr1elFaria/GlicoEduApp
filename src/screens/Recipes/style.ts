@@ -57,7 +57,6 @@ export const accordion = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     width: 'auto',
-    borderWidth: 1,
   },
   accordion: {
     display: 'flex',
