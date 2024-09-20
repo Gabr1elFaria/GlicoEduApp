@@ -19,7 +19,4 @@ export const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '600',
   },
-  icon: {
-    fontSize: 45,
-  },
 });
