@@ -10,7 +10,7 @@ import Footer from '~/components/Footer';
 import { SafeAreaView, View } from 'react-native';
 import { styles } from '~/screens/Home/style';
 import { FAQ } from '~/screens/FAQ';
-import { RecipesInstruction } from '~/screens/Recipes/RecipesInstruction';
+import { RecipesInstruction } from '~/screens/RecipesInstruction';
 
 export type RootStackParamList = {
   Home: undefined;
