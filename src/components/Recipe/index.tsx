@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { style } from './style';
 
 import IconMug from 'react-native-vector-icons/FontAwesome5';
@@ -11,13 +11,17 @@ import IconSmile from 'react-native-vector-icons/Fontisto';
 
 import { useRecipeGlicFilter } from '~/providers/RecipeGlicFilterProvider';
 import { useRecipeMealFilter } from '~/providers/RecipeMealFilterProvider';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '~/routes';
 
-interface Receita {
-  key: number;
+interface Recipe {
+  id: number;
   title: string;
   image: string;
-  ingredients: string[];
-  instructions: string[];
+  ingredients: { [key: string]: string };
+  portionsQuantity: number;
+  cookingTimeInMin: number;
+  instructions: { [key: string]: string };
   category: {
     meal: string;
     glicRate: string;
@@ -25,50 +29,61 @@ interface Receita {
 }
 
 export function Recipe() {
-  const [receitas, setReceitas] = useState<Receita[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const { lowGlic, mediumGlic } = useRecipeGlicFilter();
   const { breakfest, lunch, dinner, snack } = useRecipeMealFilter();
 
   useEffect(() => {
     const data = require('../../assets/recipes.json');
-    setReceitas(data);
+    setRecipes(data);
   }, []);
 
-  const filteredReceitas = receitas.filter((receita) => {
+  const filteredRecipes = recipes.filter((recipe) => {
     const glicRateMatch =
-      (lowGlic && receita.category.glicRate === 'baixo') ||
-      (mediumGlic && receita.category.glicRate === 'medio');
+      (lowGlic && recipe.category.glicRate === 'baixo') ||
+      (mediumGlic && recipe.category.glicRate === 'medio');
 
     const mealMatch =
-      (breakfest && receita.category.meal === 'cafe') ||
-      (lunch && receita.category.meal === 'almoco') ||
-      (dinner && receita.category.meal === 'janta') ||
-      (snack && receita.category.meal === 'lanche');
+      (breakfest && recipe.category.meal === 'cafe') ||
+      (lunch && recipe.category.meal === 'almoco') ||
+      (dinner && recipe.category.meal === 'jantar') ||
+      (snack && recipe.category.meal === 'lanche');
 
     return (
       (glicRateMatch || (!lowGlic && !mediumGlic)) &&
       (mealMatch || (!breakfest && !lunch && !dinner && !snack))
     );
   });
+
+  const handlePress = (recipe: Recipe) => {
+    navigation.navigate('ReceitasItSelf', { recipeId: recipe.id });
+  };
+
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   return (
     <>
-      {filteredReceitas.map((receita) => (
-        <View key={receita.title} style={style.container}>
-          <View style={style.containerText}>
-            <Text style={style.text}>
-              {receita.title ? receita.title : 'Título não encontrado'}
-            </Text>
-          </View>
-          <View style={style.icon}>
-            {receita.category.meal === 'almoco' && <IconSun name="sun" size={30} />}
-            {receita.category.meal === 'janta' && <IconMoon name="moon" size={30} />}
-            {receita.category.meal === 'lanche' && <IconApple name="apple" size={30} />}
-            {receita.category.meal === 'cafe' && <IconMug name="mug-hot" size={30} />}
+      {filteredRecipes.map((recipe) => (
+        <Pressable onPress={() => handlePress(recipe)} key={recipe.id}>
+          <View style={style.container}>
+            <View style={style.containerText}>
+              <Text style={style.text}>
+                {recipe.title ? recipe.title : 'Título não encontrado'}
+              </Text>
+            </View>
+            <View style={style.icon}>
+              {recipe.category.meal === 'almoco' && <IconSun name="sun" size={30} />}
+              {recipe.category.meal === 'jantar' && <IconMoon name="moon" size={30} />}
+              {recipe.category.meal === 'lanche' && <IconApple name="apple" size={30} />}
+              {recipe.category.meal === 'cafe' && <IconMug name="mug-hot" size={30} />}
 
-            {receita.category.glicRate === 'baixo' && <IconSmile name="slightly-smile" size={30} />}
-            {receita.category.glicRate === 'medio' && <IconSuperSmile name="smiley" size={30} />}
+              {recipe.category.glicRate === 'baixo' && (
+                <IconSmile name="slightly-smile" size={30} />
+              )}
+              {recipe.category.glicRate === 'medio' && <IconSuperSmile name="smiley" size={30} />}
+            </View>
           </View>
-        </View>
+        </Pressable>
       ))}
     </>
   );
