@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { FlatList, Pressable, ScrollView, Text, View } from 'react-native';
 import { style } from './style';
 
 import IconMug from 'react-native-vector-icons/FontAwesome5';
@@ -62,29 +62,32 @@ export function Recipe() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
-    <>
-      {filteredRecipes.map((recipe) => (
-        <Pressable onPress={() => handlePress(recipe)} key={recipe.id}>
-          <View style={style.container}>
-            <View style={style.containerText}>
-              <Text style={style.text}>
-                {recipe.title ? recipe.title : 'Título não encontrado'}
-              </Text>
-            </View>
-            <View style={style.icon}>
-              {recipe.category.meal === 'almoco' && <IconSun name="sun" size={30} />}
-              {recipe.category.meal === 'jantar' && <IconMoon name="moon" size={30} />}
-              {recipe.category.meal === 'lanche' && <IconApple name="apple" size={30} />}
-              {recipe.category.meal === 'cafe' && <IconMug name="mug-hot" size={30} />}
+    <View>
+      <FlatList
+        data={filteredRecipes}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <Pressable onPress={() => handlePress(item)}>
+            <View style={style.container}>
+              <View style={style.containerText}>
+                <Text style={style.text}>{item.title ? item.title : 'Título não encontrado'}</Text>
+              </View>
+              <View style={style.icon}>
+                {item.category.meal === 'almoco' && <IconSun name="sun" size={30} />}
+                {item.category.meal === 'jantar' && <IconMoon name="moon" size={30} />}
+                {item.category.meal === 'lanche' && <IconApple name="apple" size={30} />}
+                {item.category.meal === 'cafe' && <IconMug name="mug-hot" size={30} />}
 
-              {recipe.category.glicRate === 'baixo' && (
-                <IconSmile name="slightly-smile" size={30} />
-              )}
-              {recipe.category.glicRate === 'medio' && <IconSuperSmile name="smiley" size={30} />}
+                {item.category.glicRate === 'baixo' && (
+                  <IconSmile name="slightly-smile" size={30} />
+                )}
+                {item.category.glicRate === 'medio' && <IconSuperSmile name="smiley" size={30} />}
+              </View>
             </View>
-          </View>
-        </Pressable>
-      ))}
-    </>
+          </Pressable>
+        )}
+        style={style.flatListBox}
+      />
+    </View>
   );
 }

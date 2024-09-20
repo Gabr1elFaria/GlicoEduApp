@@ -1,12 +1,15 @@
 import { StyleSheet } from 'react-native';
 
 export const style = StyleSheet.create({
+  flatListBox: {
+    height: 540,
+  },
   container: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    height: 70,
     marginHorizontal: 15,
-    height: 60,
     backgroundColor: 'rgba(0, 179, 192, 0.4)',
     elevation: 2,
     shadowColor: '#000',
