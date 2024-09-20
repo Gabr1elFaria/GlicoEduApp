@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Bolo de banana rápido de liquidificador",
+    "title": "Bolo de Banana Rápido de Liquidificador",
     "image": "bolo_banana.jpg",
     "ingredients": {
       "1": "7 bananas maduras",
@@ -31,7 +31,7 @@
   },
   {
     "id": 2,
-    "title": "Omelete de espinafre com queijo",
+    "title": "Omelete de Espinafre com Queijo",
     "image": "omelete_espinafre.jpg",
     "ingredients": {
       "1": "4 ovos",
@@ -54,7 +54,7 @@
   },
   {
     "id": 3,
-    "title": "Sanduíche natural com frango desfiado",
+    "title": "Sanduíche Natural com Frango Desfiado",
     "image": "sanduiche_frango.jpg",
     "ingredients": {
       "1": "2 peitos de frango cozidos e desfiados",
@@ -76,7 +76,7 @@
   },
   {
     "id": 4,
-    "title": "Macarrão com brócolis e frango",
+    "title": "Macarrão com Brócolis e Frango",
     "image": "macarrao_brocolis_frango.jpg",
     "ingredients": {
       "1": "250g de macarrão penne",
@@ -101,7 +101,7 @@
   },
   {
     "id": 5,
-    "title": "Omelete de legumes",
+    "title": "Omelete de Legumes",
     "image": "omelete_legumes.jpg",
     "ingredients": {
       "1": "3 ovos",
@@ -128,7 +128,7 @@
   },
   {
     "id": 6,
-    "title": "Salada caprese",
+    "title": "Salada Caprese",
     "image": "salada_caprese.jpg",
     "ingredients": {
       "1": "2 tomates maduros picados",
@@ -151,7 +151,7 @@
   },
   {
     "id": 7,
-    "title": "Panquecas de banana",
+    "title": "Panquecas de Banana",
     "image": "panquecas_banana.jpg",
     "ingredients": {
       "1": "2 bananas maduras amassadas",
@@ -177,7 +177,7 @@
   },
   {
     "id": 8,
-    "title": "Salmão grelhado com legumes salteados",
+    "title": "Salmão Grelhado com Legumes Salteados",
     "image": "salmao_legumes.jpg",
     "ingredients": {
       "1": "2 filés de salmão",
@@ -201,7 +201,7 @@
   },
   {
     "id": 9,
-    "title": "Macarrão ao molho branco com frango",
+    "title": "Macarrão ao Molho Branco com Frango",
     "image": "macarrao_molho_branco.jpg",
     "ingredients": {
       "1": "250g de macarrão tipo penne",
