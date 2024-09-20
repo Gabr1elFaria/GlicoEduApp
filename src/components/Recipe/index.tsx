@@ -66,7 +66,7 @@ export function Recipe() {
   };
 
   useEffect(() => {
-    const targetHeight = heightGlicRate ? (heightMeal ? 280 : 360) : heightMeal ? 280 : 540;
+    const targetHeight = heightGlicRate ? (heightMeal ? 270 : 350) : heightMeal ? 270 : 530;
     Animated.timing(heightRef, {
       toValue: targetHeight,
       duration: 300,
@@ -84,9 +84,7 @@ export function Recipe() {
             <Pressable onPress={() => handlePress(item)}>
               <View style={style.container}>
                 <View style={style.containerText}>
-                  <Text style={style.text}>
-                    {item.title ? item.title : 'Título não encontrado'}
-                  </Text>
+                  <Text style={style.text}>{item.title}</Text>
                 </View>
                 <View style={style.icon}>
                   {item.category.meal === 'almoco' && <IconSun name="sun" size={30} />}

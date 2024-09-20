@@ -14,7 +14,6 @@ export const style = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     gap: 10,
-    borderWidth: 2,
     marginTop: -10,
   },
   textInput: {
@@ -57,6 +56,7 @@ export const accordion = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     width: 'auto',
+    marginBottom: 10,
   },
   accordion: {
     display: 'flex',
