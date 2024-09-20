@@ -40,7 +40,7 @@ export function Recipe() {
   const { heightMeal } = useMealHeight();
 
   useEffect(() => {
-    const data = require('../../assets/recipes.json');
+    const data = require('../../data/recipes.json');
     setRecipes(data);
   }, []);
 

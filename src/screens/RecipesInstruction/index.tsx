@@ -35,7 +35,7 @@ export function RecipesInstruction() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useEffect(() => {
-    const data = require('../../assets/recipes.json');
+    const data = require('../../data/recipes.json');
     setRecipes(data);
   }, []);
 
