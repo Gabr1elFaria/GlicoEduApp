@@ -4,7 +4,8 @@ export const style = StyleSheet.create({
   container: {
     display: 'flex',
     gap: 30,
-    marginTop: 10,
+    marginTop: 20,
+    marginRight: 10,
   },
   mainTitle: {
     fontSize: 26,
@@ -23,7 +24,7 @@ export const style = StyleSheet.create({
   listItem: {
     marginTop: 10,
     marginLeft: 10,
-    marginRight: 10,
+    marginRight: 15,
     display: 'flex',
     flexDirection: 'row',
   },
@@ -36,5 +37,14 @@ export const style = StyleSheet.create({
     fontWeight: '400',
     marginTop: 1,
     textAlign: 'justify',
+  },
+  scrollView: {
+    marginBottom: 80,
+  },
+  ingredientsBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 10,
   },
 });
