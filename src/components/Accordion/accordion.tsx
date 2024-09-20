@@ -14,34 +14,26 @@ interface AccordionProps {
 export default function Accordion({ title, children, onToggle }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const height = useRef(new Animated.Value(0)).current;
-  const { heightGlicRate, setHeightGlicRate } = useGlicRateHeight();
-  const { heightMeal, setHeightMeal } = useMealHeight();
+  const { heightGlicRate } = useGlicRateHeight();
+  const { heightMeal } = useMealHeight();
 
-  const toggleAccordion = () => {
-    const newState = !isOpen;
-    setIsOpen(newState);
+  useEffect(() => {
     let targetHeight = 0;
 
     if (isOpen) {
-      if (heightGlicRate && !heightMeal) {
-        targetHeight = 180;
-      } else if (!heightGlicRate && heightMeal) {
-        targetHeight = 260;
-      } else if (heightGlicRate && heightMeal) {
-        targetHeight = 260;
-      } else {
-        targetHeight = 0;
-      }
-    } else {
-      targetHeight = 0;
+      targetHeight = heightGlicRate ? (heightMeal ? 260 : 180) : heightMeal ? 260 : 0;
     }
 
     Animated.timing(height, {
       toValue: targetHeight,
-      duration: 50,
+      duration: 300,
       useNativeDriver: false,
     }).start();
+  }, [isOpen, heightGlicRate, heightMeal]);
 
+  const toggleAccordion = () => {
+    const newState = !isOpen;
+    setIsOpen(newState);
     onToggle(newState);
   };
 
