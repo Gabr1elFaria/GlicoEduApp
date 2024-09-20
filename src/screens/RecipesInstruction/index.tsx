@@ -1,6 +1,6 @@
-import { RouteProp, useRoute } from '@react-navigation/native';
+import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, ScrollView, Text, View } from 'react-native';
 import { RootStackParamList } from '~/routes';
 
 import { Button } from '~/components/Button';
@@ -10,6 +10,7 @@ import { HeaderFeature } from '~/components/HeaderFeature';
 import { style } from './style';
 
 import ArrowLeftIcon from 'react-native-vector-icons/Entypo';
+import CircleIcon from 'react-native-vector-icons/FontAwesome';
 
 interface Recipe {
   id: number;
@@ -31,6 +32,7 @@ export function RecipesInstruction() {
   const route = useRoute<RecipesInstructionRouteProp>();
   const { recipeId } = route.params;
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const data = require('../../assets/recipes.json');
@@ -39,14 +41,10 @@ export function RecipesInstruction() {
 
   const recipe = recipes.find((r) => r.id === recipeId);
 
-  const handleButtonClick = () => {
-    console.log('Botão pressionado!');
-  };
-
   const NumberedItem = ({ item, index }: { item: string; index: any }) => {
     return (
       <View style={style.listItem}>
-        <Text style={style.listItemNumber}>{index + 1}.</Text>
+        <Text style={style.listItemNumber}>{index + 1}. </Text>
         <Text style={style.item}>{item}</Text>
       </View>
     );
@@ -56,43 +54,42 @@ export function RecipesInstruction() {
     <>
       <Header />
       <HeaderFeature backgroundColor="#42A6E2" text="RECEITAS" />
-      <View>
-        <Button
-          onPress={handleButtonClick}
-          disabled={false}
-          icon={<ArrowLeftIcon name="arrow-with-circle-left" size={30} />}>
-          Voltar
-        </Button>
+      <ScrollView style={style.scrollView}>
+        <View style={{ marginLeft: 20 }}>
+          <Button
+            onPress={() => navigation.navigate('Receitas')}
+            disabled={false}
+            icon={<ArrowLeftIcon name="arrow-with-circle-left" size={30} />}>
+            Voltar
+          </Button>
+        </View>
         <View style={style.container}>
-          <View>
+          <View style={{ marginRight: -10 }}>
             <Text style={style.mainTitle}>{recipe?.title}</Text>
             <Text style={style.otherTitle}>Ingredientes ({recipe?.portionsQuantity} porções)</Text>
           </View>
-
-          <View>
-            <FlatList
-              data={Object.entries(recipe?.ingredients || {})}
-              keyExtractor={(_, index) => index.toString()}
-              renderItem={({ item, index }) => <NumberedItem item={item[1]} index={index} />}
-            />
+          <View style={{ gap: 10 }}>
+            {Object.entries(recipe?.ingredients || {}).map(([, value], index) => (
+              <View style={style.ingredientsBox} key={index.toString()}>
+                <CircleIcon name="circle" size={8} style={{ marginTop: 5 }} />
+                <Text style={[style.item, { marginLeft: 8 }]}>{value}</Text>
+              </View>
+            ))}
           </View>
-
-          <View>
+          <View style={{ marginRight: -10 }}>
             <Text style={style.otherTitle}>Modo de Preparo</Text>
             <Text style={[style.otherTitle, { fontWeight: 400, fontSize: 24 }]}>
               Tempo de preparo: {recipe?.cookingTimeInMin} minutos
             </Text>
           </View>
-
           <View>
-            <FlatList
-              data={recipe?.instructions ? Object.values(recipe?.instructions) : []}
-              keyExtractor={(_, index) => index.toString()}
-              renderItem={({ item, index }) => <NumberedItem item={item} index={index} />}
-            />
+            {recipe?.instructions &&
+              Object.values(recipe?.instructions).map((instruction, index) => (
+                <NumberedItem key={index.toString()} item={instruction} index={index} />
+              ))}
           </View>
         </View>
-      </View>
+      </ScrollView>
       <Footer />
     </>
   );
