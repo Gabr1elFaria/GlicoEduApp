@@ -19,7 +19,7 @@ export type RootStackParamList = {
   Receitas: undefined;
   Footer: undefined;
   FAQ: undefined;
-  ReceitasItSelf: undefined;
+  ReceitasItSelf: { recipeId: number };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
