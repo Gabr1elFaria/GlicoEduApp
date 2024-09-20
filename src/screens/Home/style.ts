@@ -9,4 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
   },
+  icon: {
+    fontSize: 45,
+  },
 });
