@@ -1,59 +1,226 @@
 [
   {
-    "title": "Bolo de Banana",
+    "id": 1,
+    "title": "Bolo de banana rápido de liquidificador",
     "image": "bolo_banana.jpg",
-    "ingredients": ["bananas maduras", "farinha de trigo", "ovos", "açúcar", "fermento"],
-    "instructions": ["Misture os ingredientes", "Asse em forno pré-aquecido"],
+    "ingredients": {
+      "1": "7 bananas maduras",
+      "2": "1 xícara (chá) de leite",
+      "3": "2 xícaras (chá) de farinha de trigo",
+      "4": "2 xícaras (chá) de açúcar",
+      "5": "1/2 xícara (chá) de óleo",
+      "6": "1 colher (sopa) de fermento químico"
+    },
+    "portionsQuantity": 10,
+    "cookingTimeInMin": 30,
+    "instructions": {
+      "1": "Em uma panela, adicione o açúcar e misture até derreter.",
+      "2": "Despeje a água quente e mexa até dissolver o açúcar.",
+      "3": "Deixe engrossar até chegar ao ponto de calda e reserve.",
+      "4": "Bata no liquidificador os ovos, o açúcar, o óleo e o leite.",
+      "5": "Acrescente a farinha de trigo aos poucos e continue batendo até obter uma massa lisa e homogênea.",
+      "6": "Adicione por último o fermento e bata na velocidade mínima do liquidificador.",
+      "7": "Unte uma forma média com margarina e farinha.",
+      "8": "Despeje o caramelo e as bananas cortadas no comprimento.",
+      "9": "Leve para assar em forno médio 180º C, preaquecido por aproximadamente 30 minutos."
+    },
     "category": {
       "meal": "lanche",
       "glicRate": "medio"
     }
   },
   {
-    "title": "Salada Caesar",
-    "image": "salada_caesar.jpg",
-    "ingredients": ["alface romana", "croutons", "queijo parmesão", "frango grelhado"],
-    "instructions": ["Lave a alface", "Misture todos os ingredientes"],
-    "category": {
-      "meal": "almoco",
-      "glicRate": "baixo"
-    }
-  },
-  {
-    "title": "Bolo de Maça",
-    "image": "bolo_banana.jpg",
-    "ingredients": ["bananas maduras", "farinha de trigo", "ovos", "açúcar", "fermento"],
-    "instructions": ["Misture os ingredientes", "Asse em forno pré-aquecido"],
-    "category": {
-      "meal": "janta",
-      "glicRate": "medio"
-    }
-  },
-  {
-    "title": "Salada",
-    "image": "salada_caesar.jpg",
-    "ingredients": ["alface romana", "croutons", "queijo parmesão", "frango grelhado"],
-    "instructions": ["Lave a alface", "Misture todos os ingredientes"],
+    "id": 2,
+    "title": "Omelete de espinafre com queijo",
+    "image": "omelete_espinafre.jpg",
+    "ingredients": {
+      "1": "4 ovos",
+      "2": "1 xícara de espinafre picado",
+      "3": "1/2 xícara de queijo ralado",
+      "4": "Sal e pimenta a gosto"
+    },
+    "portionsQuantity": 2,
+    "cookingTimeInMin": 15,
+    "instructions": {
+      "1": "Bata os ovos com um garfo.",
+      "2": "Adicione o espinafre, o queijo e temperos.",
+      "3": "Aqueça uma frigideira antiaderente com um pouco de óleo.",
+      "4": "Despeje a mistura e cozinhe até dourar."
+    },
     "category": {
       "meal": "cafe",
       "glicRate": "baixo"
     }
   },
   {
-    "title": "Bolo de Manga",
-    "image": "bolo_banana.jpg",
-    "ingredients": ["bananas maduras", "farinha de trigo", "ovos", "açúcar", "fermento"],
-    "instructions": ["Misture os ingredientes", "Asse em forno pré-aquecido"],
+    "id": 3,
+    "title": "Sanduíche natural com frango desfiado",
+    "image": "sanduiche_frango.jpg",
+    "ingredients": {
+      "1": "2 peitos de frango cozidos e desfiados",
+      "2": "4 fatias de pão integral",
+      "3": "2 folhas de alface",
+      "4": "1 tomate picado",
+      "5": "Maionese a gosto"
+    },
+    "portionsQuantity": 2,
+    "cookingTimeInMin": 10,
+    "instructions": {
+      "1": "Misture o frango desfiado com a maionese.",
+      "2": "Monte o sanduíche com as fatias de pão, alface, tomate e o frango."
+    },
     "category": {
       "meal": "lanche",
       "glicRate": "medio"
     }
   },
   {
-    "title": "Salada Um",
-    "image": "salada_caesar.jpg",
-    "ingredients": ["alface romana", "croutons", "queijo parmesão", "frango grelhado"],
-    "instructions": ["Lave a alface", "Misture todos os ingredientes"],
+    "id": 4,
+    "title": "Macarrão com brócolis e frango",
+    "image": "macarrao_brocolis_frango.jpg",
+    "ingredients": {
+      "1": "250g de macarrão penne",
+      "2": "1 peito de frango cozido e desfiado",
+      "3": "1 brócolis pequeno picado",
+      "4": "1 dente de alho picado",
+      "5": "Sal e pimenta a gosto",
+      "6": "Azeite para refogar"
+    },
+    "portionsQuantity": 4,
+    "cookingTimeInMin": 30,
+    "instructions": {
+      "1": "Cozinhe o macarrão conforme as instruções da embalagem.",
+      "2": "Refogue o alho no azeite, adicione o brócolis e cozinhe por alguns minutos.",
+      "3": "Acrescente o frango desfiado e tempere com sal e pimenta.",
+      "4": "Misture o macarrão cozido ao refogado."
+    },
+    "category": {
+      "meal": "almoco",
+      "glicRate": "medio"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Omelete de legumes",
+    "image": "omelete_legumes.jpg",
+    "ingredients": {
+      "1": "3 ovos",
+      "2": "1/2 cebola picada",
+      "3": "1/2 pimentão vermelho picado",
+      "4": "1/2 xícara de espinafre picado",
+      "5": "Sal e pimenta a gosto",
+      "6": "Queijo ralado a gosto (opcional)"
+    },
+    "portionsQuantity": 1,
+    "cookingTimeInMin": 15,
+    "instructions": {
+      "1": "Bata os ovos com um garfo.",
+      "2": "Refogue a cebola e o pimentão em uma frigideira antiaderente.",
+      "3": "Adicione o espinafre e refogue por mais alguns minutos.",
+      "4": "Despeje os ovos batidos sobre os legumes.",
+      "5": "Espalhe o queijo ralado por cima (opcional).",
+      "6": "Cozinhe até a omelete estar firme."
+    },
+    "category": {
+      "meal": "cafe",
+      "glicRate": "medio"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Salada caprese",
+    "image": "salada_caprese.jpg",
+    "ingredients": {
+      "1": "2 tomates maduros picados",
+      "2": "1 bola de mussarela de búfala fatiada",
+      "3": "Manjericão fresco picado",
+      "4": "Azeite extra virgem",
+      "5": "Sal e pimenta a gosto"
+    },
+    "portionsQuantity": 1,
+    "cookingTimeInMin": 5,
+    "instructions": {
+      "1": "Em um prato, alterne as fatias de tomate e mussarela.",
+      "2": "Salpique o manjericão picado por cima.",
+      "3": "Regue com azeite extra virgem e tempere com sal e pimenta."
+    },
+    "category": {
+      "meal": "jantar",
+      "glicRate": "medio"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Panquecas de banana",
+    "image": "panquecas_banana.jpg",
+    "ingredients": {
+      "1": "2 bananas maduras amassadas",
+      "2": "1 ovo",
+      "3": "1 xícara de farinha de trigo",
+      "4": "1/2 xícara de leite",
+      "5": "1 colher de chá de fermento em pó",
+      "6": "Uma pitada de sal"
+    },
+    "portionsQuantity": 2,
+    "cookingTimeInMin": 15,
+    "instructions": {
+      "1": "Em uma tigela, misture a banana amassada, o ovo, o leite e o sal.",
+      "2": "Adicione a farinha e o fermento, misturando até obter uma massa homogênea.",
+      "3": "Aqueça uma frigideira antiaderente com um pouco de óleo.",
+      "4": "Despeje porções da massa na frigideira, formando as panquecas.",
+      "5": "Cozinhe dos dois lados até dourarem."
+    },
+    "category": {
+      "meal": "lanche",
+      "glicRate": "baixo"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Salmão grelhado com legumes salteados",
+    "image": "salmao_legumes.jpg",
+    "ingredients": {
+      "1": "2 filés de salmão",
+      "2": "1 abobrinha cortada em rodelas",
+      "3": "1 cenoura cortada em rodelas",
+      "4": "1 cebola picada",
+      "5": "Azeite, sal e pimenta a gosto"
+    },
+    "portionsQuantity": 2,
+    "cookingTimeInMin": 25,
+    "instructions": {
+      "1": "Tempere os filés de salmão com sal e pimenta.",
+      "2": "Aqueça uma frigideira antiaderente e grelhe os filés até estarem cozidos ao ponto desejado.",
+      "3": "Em outra frigideira, refogue a cebola, a abobrinha e a cenoura em azeite até os legumes estarem macios.",
+      "4": "Sirva o salmão com os legumes salteados."
+    },
+    "category": {
+      "meal": "jantar",
+      "glicRate": "baixo"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Macarrão ao molho branco com frango",
+    "image": "macarrao_molho_branco.jpg",
+    "ingredients": {
+      "1": "250g de macarrão tipo penne",
+      "2": "1 peito de frango cozido e desfiado",
+      "3": "50g de manteiga",
+      "4": "50g de farinha de trigo",
+      "5": "1 litro de leite",
+      "6": "Sal e noz-moscada a gosto"
+    },
+    "portionsQuantity": 4,
+    "cookingTimeInMin": 30,
+    "instructions": {
+      "1": "Cozinhe o macarrão conforme as instruções da embalagem.",
+      "2": "Em uma panela, derreta a manteiga e adicione a farinha, mexendo até formar um roux.",
+      "3": "Aos poucos, adicione o leite, mexendo sempre para evitar grumos.",
+      "4": "Cozinhe em fogo baixo até o molho engrossar.",
+      "5": "Adicione o frango desfiado, sal e noz-moscada a gosto.",
+      "6": "Misture o molho ao macarrão cozido."
+    },
     "category": {
       "meal": "almoco",
       "glicRate": "baixo"
