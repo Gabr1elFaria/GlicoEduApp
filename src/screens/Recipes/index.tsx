@@ -48,6 +48,10 @@ export function Recipes() {
     }
   };
 
+  const handlePressSearchButton = () => {
+    Keyboard.dismiss();
+  };
+
   return (
     <TouchableWithoutFeedback onPress={handleTouchOutside}>
       <View style={style.mainContainer}>
@@ -72,6 +76,7 @@ export function Recipes() {
             titleStyle={style.buttonText}
             title="PESQUISAR"
             disabled={!enable}
+            onPress={handlePressSearchButton}
           />
         </View>
         <View style={accordion.container}>
