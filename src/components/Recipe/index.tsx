@@ -30,7 +30,11 @@ interface Recipe {
   };
 }
 
-export function Recipe() {
+interface RecipeProps {
+  searchQuery: string;
+}
+
+export function Recipe({ searchQuery }: RecipeProps) {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const { lowGlic, mediumGlic } = useRecipeGlicFilter();
   const { breakfest, lunch, dinner, snack } = useRecipeMealFilter();
@@ -55,7 +59,10 @@ export function Recipe() {
       (dinner && recipe.category.meal === 'jantar') ||
       (snack && recipe.category.meal === 'lanche');
 
+    const searchMatch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase());
+
     return (
+      searchMatch &&
       (glicRateMatch || (!lowGlic && !mediumGlic)) &&
       (mealMatch || (!breakfest && !lunch && !dinner && !snack))
     );

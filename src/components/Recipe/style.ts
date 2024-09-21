@@ -10,12 +10,15 @@ export const style = StyleSheet.create({
     justifyContent: 'space-between',
     height: 70,
     marginHorizontal: 15,
-    backgroundColor: 'rgba(0, 179, 192, 0.4)',
-    elevation: 2,
+    backgroundColor: '#d9f8ff',
+    borderColor: '#EFEFEF',
+    borderWidth: 1,
+    borderRadius: 10,
+    elevation: 5,
     shadowColor: '#000',
     shadowOffset: { width: 1, height: 2 },
     shadowOpacity: 1,
-    shadowRadius: 3,
+    shadowRadius: 5,
     marginTop: 10,
   },
   containerText: {
@@ -25,7 +28,7 @@ export const style = StyleSheet.create({
     overflow: 'hidden',
   },
   text: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '500',
   },
   icon: {

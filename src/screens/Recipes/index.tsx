@@ -32,12 +32,6 @@ export function Recipes() {
     setEnable(text !== '');
   };
 
-  useEffect(() => {
-    if (inputValue !== '') {
-      console.log(inputValue);
-    }
-  }, [inputValue]);
-
   const handlePressAccordionGlicRate = (isOpen: boolean) => {
     if (setHeightGlicRate) {
       setHeightGlicRate(isOpen);
@@ -93,7 +87,7 @@ export function Recipes() {
             </Accordion>
           </View>
         </View>
-        <Recipe />
+        <Recipe searchQuery={inputValue} />
         <Footer />
       </View>
     </TouchableWithoutFeedback>
