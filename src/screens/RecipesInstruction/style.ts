@@ -47,4 +47,13 @@ export const style = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 10,
   },
+  recipeImage: {
+    width: 'auto',
+    height: 200,
+  },
+  recipeImageBox: {
+    marginTop: 20,
+    marginLeft: 10,
+    borderWidth: 1,
+  },
 });

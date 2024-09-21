@@ -1,6 +1,6 @@
 import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { FlatList, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 import { RootStackParamList } from '~/routes';
 
 import { Button } from '~/components/Button';
@@ -15,7 +15,7 @@ import CircleIcon from 'react-native-vector-icons/FontAwesome';
 interface Recipe {
   id: number;
   title: string;
-  image: string;
+  image?: string;
   ingredients: { [key: string]: string };
   portionsQuantity: number;
   cookingTimeInMin: number;
@@ -50,6 +50,23 @@ export function RecipesInstruction() {
     );
   };
 
+  const imageMap: { [key: string]: any } = {
+    bolo_banana: require('../../images/bolo_banana.jpg'),
+    macarrao_brocolis_frango: require('../../images/macarrao_brocolis_frango.jpg'),
+    macarrao_molho_branco: require('../../images/macarrao_molho_branco.jpg'),
+    omelete_espinafre: require('../../images/omelete_espinafre.jpg'),
+    omelete_legumes: require('../../images/omelete_legumes.jpg'),
+    panquecas_banana: require('../../images/panquecas_banana.jpg'),
+    salada_caprese: require('../../images/salada_caprese.jpg'),
+    salmao_legumes: require('../../images/salmao_legumes.jpg'),
+    sanduiche_frango: require('../../images/sanduiche_frango.jpg'),
+  };
+
+  const imageSource =
+    recipe?.image && imageMap[recipe?.image]
+      ? imageMap[recipe.image]
+      : require('../../images/default.jpg');
+
   return (
     <>
       <Header />
@@ -64,6 +81,9 @@ export function RecipesInstruction() {
           </Button>
         </View>
         <View style={style.container}>
+          <View style={style.recipeImageBox}>
+            <Image source={imageSource} style={style.recipeImage} />
+          </View>
           <View style={{ marginRight: -10 }}>
             <Text style={style.mainTitle}>{recipe?.title}</Text>
             <Text style={style.otherTitle}>Ingredientes ({recipe?.portionsQuantity} porções)</Text>
