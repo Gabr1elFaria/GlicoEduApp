@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "question": "Qual dos seguintes NÃO é um sintoma comum do diabetes tipo 1 e tipo 2?",
+    "options": {
+      "A": "Sede excessiva",
+      "B": "Fome frequente",
+      "C": "Fadiga",
+      "D": "Perda de peso inexplicada",
+      "E": "Visão embaçada"
+    },
+    "rightAnswer": "E"
+  },
+  {
+    "id": 2,
+    "question": "Qual alimento, em geral, deve ser consumido com moderação por pessoas com diabetes?",
+    "options": {
+      "A": "Frutas",
+      "B": "Legumes",
+      "C": "Doces",
+      "D": "Carnes magras",
+      "E": "Cereais integrais"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 3,
+    "question": "Qual hormônio é fundamental para o controle da glicose no sangue?",
+    "options": {
+      "A": "Insulina",
+      "B": "Adrenalina",
+      "C": "Cortisol",
+      "D": "Tiroxina",
+      "E": "Grelina"
+    },
+    "rightAnswer": "A"
+  },
+  {
+    "id": 4,
+    "question": "Qual atividade física é recomendada para pessoas com diabetes?",
+    "options": {
+      "A": "Sedentarismo",
+      "B": "Exercícios intensos e longos",
+      "C": "Atividade física regular e moderada",
+      "D": "Apenas musculação",
+      "E": "Apenas exercícios aeróbicos"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 5,
+    "question": "Qual complicação crônica do diabetes pode afetar os nervos?",
+    "options": {
+      "A": "Retinopatia",
+      "B": "Nefropatia",
+      "C": "Neuropatia",
+      "D": "Cardiopatia",
+      "E": "Osteoporose"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 6,
+    "question": "Qual fator de risco está mais associado ao diabetes tipo 2?",
+    "options": {
+      "A": "Genética",
+      "B": "Infecção viral",
+      "C": "Falta de vitamina D",
+      "D": "Obesidade",
+      "E": "Alergia alimentar"
+    },
+    "rightAnswer": "D"
+  },
+  {
+    "id": 7,
+    "question": "Qual aparelho mede a glicose no sangue?",
+    "options": {
+      "A": "Tensiômetro",
+      "B": "Oxímetro",
+      "C": "Gliceômetro",
+      "D": "Estetoscópio",
+      "E": "Termômetro"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 8,
+    "question": "Qual alimento possui índice glicêmico baixo e é recomendado para diabéticos?",
+    "options": {
+      "A": "Pão branco",
+      "B": "Batata frita",
+      "C": "Melancia",
+      "D": "Suco de laranja",
+      "E": "Biscoito recheado"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 9,
+    "question": "O que é a hipoglicemia?",
+    "options": {
+      "A": "Níveis elevados de açúcar no sangue",
+      "B": "Níveis baixos de açúcar no sangue",
+      "C": "Infecção urinária",
+      "D": "Pressão alta",
+      "E": "Cansaço excessivo"
+    },
+    "rightAnswer": "B"
+  },
+  {
+    "id": 10,
+    "question": "Qual a importância de monitorar regularmente a glicemia?",
+    "options": {
+      "A": "Não é importante",
+      "B": "Apenas para diabéticos tipo 1",
+      "C": "Para ajustar o tratamento e prevenir complicações",
+      "D": "Apenas antes das refeições",
+      "E": "Apenas após exercícios físicos"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 11,
+    "question": "Qual complicação do diabetes pode levar à cegueira?",
+    "options": {
+      "A": "Neuropatia",
+      "B": "Nefropatia",
+      "C": "Retinopatia",
+      "D": "Cardiopatia",
+      "E": "Osteoporose"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 12,
+    "question": "Qual o principal papel da insulina no organismo?",
+    "options": {
+      "A": "Aumentar a glicose no sangue",
+      "B": "Diminuir a glicose no sangue",
+      "C": "Regular a pressão arterial",
+      "D": "Aumentar a produção de colesterol",
+      "E": "Regular a temperatura corporal"
+    },
+    "rightAnswer": "B"
+  },
+  {
+    "id": 13,
+    "question": "Qual o principal fator de risco para desenvolver diabetes gestacional?",
+    "options": {
+      "A": "Idade materna avançada",
+      "B": "Falta de exercícios físicos",
+      "C": "Obesidade",
+      "D": "Histórico familiar de diabetes",
+      "E": "Todas as alternativas acima"
+    },
+    "rightAnswer": "E"
+  },
+  {
+    "id": 14,
+    "question": "Qual o exame utilizado para monitorar o controle da glicemia a longo prazo?",
+    "options": {
+      "A": "Glicemia de jejum",
+      "B": "Glicemia pós-prandial",
+      "C": "Hemoglobina glicada (HbA1c)",
+      "D": "Teste oral de tolerância à glicose",
+      "E": "Dosagem de insulina"
+    },
+    "rightAnswer": "C"
+  },
+  {
+    "id": 15,
+    "question": "Qual dos seguintes alimentos possui alto índice glicêmico e deve ser consumido com moderação por pessoas com diabetes?",
+    "options": {
+      "A": "Maçã",
+      "B": "Arroz integral",
+      "C": "Pão branco",
+      "D": "Lentilha",
+      "E": "Salada"
+    },
+    "rightAnswer": "C"
+  }
+]
