@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 import { RootStackParamList } from '~/routes';
 
-import { Button } from '~/components/Button';
+import { ButtonCustom } from '~/components/Button';
 import Footer from '~/components/Footer';
 import { Header } from '~/components/Header';
 import { HeaderFeature } from '~/components/HeaderFeature';
@@ -73,12 +73,13 @@ export function RecipesInstruction() {
       <HeaderFeature backgroundColor="#42A6E2" text="RECEITAS" />
       <ScrollView style={style.scrollView}>
         <View style={{ marginLeft: 20 }}>
-          <Button
+          <ButtonCustom
             onPress={() => navigation.navigate('Receitas')}
             disabled={false}
+            propsStyle={{ flexDirection: 'row' }}
             icon={<ArrowLeftIcon name="arrow-with-circle-left" size={30} />}>
             Voltar
-          </Button>
+          </ButtonCustom>
         </View>
         <View style={style.container}>
           <View style={style.recipeImageBox}>
