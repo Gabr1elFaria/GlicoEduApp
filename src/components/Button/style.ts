@@ -4,12 +4,12 @@ export const style = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     borderRadius: 6,
-    height: 45,
-    width: 100,
-    display: 'flex',
+    width: 120,
+    gap: 10,
+    height: 50,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     borderWidth: 2,
   },
   text: {
