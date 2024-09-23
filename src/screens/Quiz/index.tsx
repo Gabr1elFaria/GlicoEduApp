@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import ArrowRightIcon from 'react-native-vector-icons/Entypo';
+import { Button } from '@rneui/themed';
+import IconCheck from 'react-native-vector-icons/FontAwesome5';
+import IconTimes from 'react-native-vector-icons/FontAwesome';
+
 import Footer from '~/components/Footer';
 import { Header } from '~/components/Header';
 import { HeaderFeature } from '~/components/HeaderFeature';
-import { style } from './style';
+import { style, answer } from './style';
+import { ButtonCustom } from '~/components/Button';
 
 import questionsData from '../../data/questions.json';
 
@@ -21,6 +27,7 @@ export function Quiz() {
   const [showResult, setShowResult] = useState<boolean>(false);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
   const [usedQuestions, setUsedQuestions] = useState<Question[]>([]);
+  const [isConfirmed, setIsConfirmed] = useState<boolean>(false);
 
   useEffect(() => {
     const shuffledQuestions = [...questionsData].sort(() => Math.random() - 0.5);
@@ -44,18 +51,26 @@ export function Quiz() {
     setSelectedAnswer(null);
     setShowResult(false);
     setResultMessage(null);
+    setIsConfirmed(false);
   };
 
   const handleSelectAnswer = (answer: string) => {
-    setSelectedAnswer(answer);
+    if (!isConfirmed) {
+      setSelectedAnswer(answer);
+    }
   };
 
   const handleConfirmAnswer = () => {
     if (currentQuestion) {
       const isCorrect = selectedAnswer === currentQuestion.rightAnswer;
-      setResultMessage(isCorrect ? 'Resposta correta!' : 'Resposta errada.');
+      setResultMessage(
+        isCorrect
+          ? `Parabéns! Você acertou, a resposta correta é a letra ${currentQuestion.rightAnswer}`
+          : `Ops! Você errou. A resposta correta é a letra ${currentQuestion.rightAnswer}`
+      );
       setShowResult(true);
       setUsedQuestions([...usedQuestions, currentQuestion]);
+      setIsConfirmed(true);
     }
   };
 
@@ -72,24 +87,70 @@ export function Quiz() {
       <View style={style.mainContainer}>
         <View style={style.container}>
           <Text style={style.questionText}>{currentQuestion.question}</Text>
-          {Object.entries(currentQuestion.options).map(([key, option]) => (
-            <TouchableOpacity
-              key={key}
-              style={[style.optionButton, selectedAnswer === key && style.selectedOptionButton]}
-              onPress={() => handleSelectAnswer(key)}>
-              <View style={style.optionLetterBox}>
-                <Text style={[style.optionText]}>{`${key}`}</Text>
-              </View>
-              <Text style={[style.optionText, { marginBottom: 3 }]}>{`${option}`}</Text>
-            </TouchableOpacity>
-          ))}
+          {Object.entries(currentQuestion.options).map(([key, option]) => {
+            const isCorrectAnswer = key === currentQuestion.rightAnswer;
+            const isSelectedAnswer = key === selectedAnswer;
 
-          {selectedAnswer && <Button title="Confirmar" onPress={handleConfirmAnswer} />}
+            let optionStyle = style.optionButton;
+            let icon = null;
+
+            if (isConfirmed) {
+              if (isSelectedAnswer && isCorrectAnswer) {
+                optionStyle = answer.correctSelectAnswer;
+                icon = <IconCheck name="check-circle" size={30} color={'white'} />;
+              } else if (isSelectedAnswer && !isCorrectAnswer) {
+                optionStyle = answer.wrongSelectAnswer;
+                icon = <IconTimes name="times-circle" size={30} color={'white'} />;
+              } else if (isCorrectAnswer) {
+                optionStyle = answer.correctAnswer;
+              }
+            }
+
+            return (
+              <TouchableOpacity
+                key={key}
+                style={
+                  !isSelectedAnswer
+                    ? style.optionButton
+                    : isConfirmed
+                      ? optionStyle
+                      : answer.selectedOptionButton
+                }
+                onPress={() => handleSelectAnswer(key)}
+                disabled={isConfirmed}>
+                <View style={style.optionLetterBox}>
+                  <Text style={style.optionText}>{`${key}`}</Text>
+                </View>
+                <View style={style.optionTextBox}>
+                  <Text style={[style.optionText, { marginBottom: 3 }]}>{`${option}`}</Text>
+                  <View>{icon && <View>{icon}</View>}</View>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+
+          <View style={style.buttonBox}>
+            <Button
+              buttonStyle={!selectedAnswer || isConfirmed ? style.buttonDisable : style.button}
+              titleStyle={style.buttonText}
+              title="CONFIRMAR"
+              onPress={handleConfirmAnswer}
+              disabled={!selectedAnswer || isConfirmed}
+            />
+          </View>
 
           {showResult && (
             <>
               <Text style={style.resultText}>{resultMessage}</Text>
-              <Button title="Outra pergunta" onPress={handleNextQuestion} />
+              <View style={style.buttonNextQuestionBox}>
+                <ButtonCustom
+                  onPress={handleNextQuestion}
+                  disabled={false}
+                  propsStyle={style.buttonNextQuestion}
+                  icon={<ArrowRightIcon name="arrow-with-circle-right" size={40} />}>
+                  Próxima Pergunta
+                </ButtonCustom>
+              </View>
             </>
           )}
         </View>
