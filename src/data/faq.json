@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "Quais funcionalidades esse aplicativo possui ?",
+    "answer": "Este aplicativo possui como funcionalidades uma calculadora de insulina, uma aba de receitas e um quiz."
+  },
+  {
+    "id": 2,
+    "question": "Como usar a funcionalidade 'Calculadora de Insulina' ?",
+    "answer": "Basta clicar no ícone na tela inicial ou, se não estiver na tela inicial, no menu na parte debaixo do app para ser direcionado a tela da calculadora de insulina. Já na tela do app basta digitar a quantidade de carboidrato em gramas e clicar em calcular"
+  },
+  {
+    "id": 3,
+    "question": "Como usar a funcionalidade 'receitas' ?",
+    "answer": "Basta clicar no ícone na tela inicial ou, se não estiver na tela inicial, no menu na parte debaixo do app para ser direcionado a tela das receitas. É possível pesquisar pelo título da receita e também é possível utilizar filtros para mostrar receitas que são para o café da manhã, para o almoço, para a janta ou para lanches, além dos filtros de baixo índice glicêmico e de médio índice glicêmico. Para ver uma receita apenas clique sobre o seu nome."
+  },
+  {
+    "id": 4,
+    "question": "Como usar a funcionalidade 'quiz' ?",
+    "answer": "Basta clicar no ícone na tela inicial ou, se não estiver na tela inicial, no menu na parte debaixo do app para ser direcionado a tela do quiz. Uma pergunta já será mostrada, vc pode clicar sobre qualquer uma das 5 opções que podem ou não ser a resposta correta. Quando clicar, um botão de 'confirmar' será habilitado. Clique em confirmar para ver se sua resposta está certa ou não. Após isso, poderá ver um botão escrito 'outra pergunta', que levará a uma próxima pergunta."
+  },
+  {
+    "id": 5,
+    "question": "Estou com dúvidas em como usar o aplicativo, com quem eu falo ?",
+    "answer": "Entre em contato via WhatsApp número (xx) xxxxx-xxxx"
+  }
+]
