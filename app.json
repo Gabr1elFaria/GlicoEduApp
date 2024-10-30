@@ -6,24 +6,28 @@
     "experiments": {
       "tsconfigPaths": true
     },
-
     "plugins": [],
-
     "orientation": "portrait",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
+      },
+      "package": "Glico.Edu"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "585e0b31-8d65-46c8-9936-e669fdb5cf48"
       }
     }
   }
