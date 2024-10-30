@@ -13,7 +13,7 @@ export function InsulinCalc() {
   const [showInsulinResult, setShowInsulinResult] = useState(false);
   const [textPart1, setTextPart1] = useState('');
   const [textPart2, setTextPart2] = useState('');
-  let insulin = 0;
+  let carbs = 0;
 
   const handleTouchOutside = () => {
     Keyboard.dismiss();
@@ -23,23 +23,31 @@ export function InsulinCalc() {
   };
 
   const handleButtonClick = () => {
-    insulin = Number(inputValue) + 10;
-    handleValueInsulin(insulin);
+    carbs = Number(inputValue);
+    handleValueInsulin(carbs);
     setShowInsulinResult(true);
     setEnable(false);
     handleTouchOutside();
   };
 
-  const handleValueInsulin = (insulin: any) => {
-    if (insulin <= 12) {
+  const handleValueInsulin = (carbs: number) => {
+    if (carbs > 0 && carbs <= 15) {
       setTextPart1('Uma ( 1 )');
       setTextPart2(' Unidade');
-    } else if (insulin > 12 && insulin < 17) {
+    } else if (carbs > 15 && carbs <= 30) {
       setTextPart1('Duas ( 2 )');
       setTextPart2(' Unidades');
-    } else {
+    } else if (carbs > 30 && carbs <= 45) {
       setTextPart1('Três ( 3 )');
       setTextPart2(' Unidades');
+    } else if (carbs > 45 && carbs <= 60) {
+      setTextPart1('Quatro ( 4 )');
+      setTextPart2(' Unidades');
+    } else if (carbs > 60 && carbs <= 75) {
+      setTextPart1('Cinco ( 5 )');
+      setTextPart2(' Unidades');
+    } else {
+      setTextPart2(' Não foi possível calcular');
     }
   };
 
