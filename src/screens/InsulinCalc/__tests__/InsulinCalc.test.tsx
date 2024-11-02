@@ -58,7 +58,7 @@ describe('InsulinCalc Component', () => {
     expect(button).toBeDisabled();
   });
 
-  test('calculates correct insulin dose for input 10', async () => {
+  test('calculates correct insulin dose for input 15', async () => {
     const { getByPlaceholderText, getByRole, findByText } = render(
       <NavigationContainer>
         <InsulinCalc />
@@ -66,16 +66,16 @@ describe('InsulinCalc Component', () => {
     );
     const input = getByPlaceholderText('Ex: 30');
 
-    fireEvent.changeText(input, '10');
+    fireEvent.changeText(input, '15');
     fireEvent.press(getByRole('button', { name: 'CALCULAR' }));
 
     expect(
-      await findByText('A dose necessária de insulina para 10 gramas de carboidrato é:')
+      await findByText('A dose necessária de insulina para 15 gramas de carboidrato é:')
     ).toBeTruthy();
     expect(await findByText('Uma ( 1 ) Unidade')).toBeTruthy();
   });
 
-  test('calculates correct insulin dose for input 50', async () => {
+  test('calculates correct insulin dose for input 30', async () => {
     const { getByPlaceholderText, getByRole, findByText } = render(
       <NavigationContainer>
         <InsulinCalc />
@@ -83,13 +83,13 @@ describe('InsulinCalc Component', () => {
     );
     const input = getByPlaceholderText('Ex: 30');
 
-    fireEvent.changeText(input, '50');
+    fireEvent.changeText(input, '30');
     fireEvent.press(getByRole('button', { name: 'CALCULAR' }));
 
     expect(
-      await findByText('A dose necessária de insulina para 50 gramas de carboidrato é:')
+      await findByText('A dose necessária de insulina para 30 gramas de carboidrato é:')
     ).toBeTruthy();
-    expect(await findByText('Quatro ( 4 ) Unidades')).toBeTruthy();
+    expect(await findByText('Duas ( 2 ) Unidades')).toBeTruthy();
   });
 
   test('calculates "Não foi possível calcular" for values above 75', async () => {
