@@ -27,9 +27,9 @@ export function Recipes() {
     }
   };
 
-  const handleInputChange = (text: React.SetStateAction<string>) => {
+  const handleInputChange = (text: string) => {
     setInputValue(text);
-    setEnable(text !== '');
+    setEnable(text.trim() !== '');
   };
 
   const handlePressAccordionGlicRate = (isOpen: boolean) => {
@@ -54,7 +54,7 @@ export function Recipes() {
 
   return (
     <TouchableWithoutFeedback onPress={handleTouchOutside}>
-      <View style={style.mainContainer}>
+      <View style={style.mainContainer} testID="containerView">
         <Header />
         <HeaderFeature backgroundColor="#42A6E2" text="RECEITAS" />
         <View style={style.containerOne}>
