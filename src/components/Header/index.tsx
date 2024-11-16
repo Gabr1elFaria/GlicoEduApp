@@ -17,14 +17,16 @@ export function Header() {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('Home');
-          }}>
+          }}
+          testID="home-icon">
           <IconHome name="home" size={30} />
         </TouchableOpacity>
         <Text style={{ fontSize: 26 }}>GlicoEdu</Text>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('FAQ');
-          }}>
+          }}
+          testID="faq-icon">
           <IconQuestion name="questioncircleo" size={30} />
         </TouchableOpacity>
       </View>
