@@ -2,8 +2,15 @@ import React from 'react';
 import { View } from 'react-native';
 import { style } from './style';
 
-export default function CheckBox({ isChecked }: { isChecked: boolean }) {
+interface CheckBoxProps {
+  isChecked: boolean;
+  testID?: string;
+}
+
+export default function CheckBox({ isChecked, testID }: CheckBoxProps) {
   return (
-    <View style={[style.container, { backgroundColor: isChecked ? 'black' : 'white' }]}></View>
+    <View
+      testID={testID}
+      style={[style.container, { backgroundColor: isChecked ? 'black' : 'white' }]}></View>
   );
 }
