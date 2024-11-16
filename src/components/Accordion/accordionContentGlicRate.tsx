@@ -27,7 +27,7 @@ export default function AccordionContentGlicRate() {
               <IconSmile name="slightly-smile" size={30} />
             </View>
             <View>
-              <CheckBox isChecked={lowGlic} />
+              <CheckBox isChecked={lowGlic} testID="low-glic-checkbox" />
             </View>
           </View>
           <View style={style.textBox}>
@@ -42,7 +42,7 @@ export default function AccordionContentGlicRate() {
               <IconSuperSmile name="smiley" size={30} />
             </View>
             <View>
-              <CheckBox isChecked={mediumGlic} />
+              <CheckBox isChecked={mediumGlic} testID="medium-glic-checkbox" />
             </View>
           </View>
           <View style={style.textBox}>
