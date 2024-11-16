@@ -16,4 +16,5 @@ module.exports = {
         'node'
     ],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths || {}, { prefix: '<rootDir>/' }),
+    collectCoverage: true,
 };
