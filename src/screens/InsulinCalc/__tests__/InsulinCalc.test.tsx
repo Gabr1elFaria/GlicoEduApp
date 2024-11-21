@@ -4,13 +4,17 @@ import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { InsulinCalc } from '..';
 import { NavigationContainer } from '@react-navigation/native';
 
+const InsulinCalculatorComponent = () => {
+  return (
+    <NavigationContainer>
+      <InsulinCalc />
+    </NavigationContainer>
+  );
+};
+
 describe('InsulinCalc Component', () => {
   test('renders input, button, and initial text correctly', () => {
-    const { getByPlaceholderText, getByText } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
-    );
+    const { getByPlaceholderText, getByText } = render(InsulinCalculatorComponent());
 
     expect(getByPlaceholderText('Ex: 30')).toBeTruthy();
     expect(getByText('Insira a quantidade de carboidrato em gramas:')).toBeTruthy();
@@ -29,11 +33,7 @@ describe('InsulinCalc Component', () => {
   });
 
   test('enables button when input has a valid number', async () => {
-    const { getByPlaceholderText, getByRole } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
-    );
+    const { getByPlaceholderText, getByRole } = render(InsulinCalculatorComponent());
     const input = getByPlaceholderText('Ex: 30');
     const button = getByRole('button', { name: 'CALCULAR' });
 
@@ -45,11 +45,7 @@ describe('InsulinCalc Component', () => {
   });
 
   test('disables button when input is cleared', () => {
-    const { getByPlaceholderText, getByRole } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
-    );
+    const { getByPlaceholderText, getByRole } = render(InsulinCalculatorComponent());
     const input = getByPlaceholderText('Ex: 30');
     const button = getByRole('button', { name: 'CALCULAR' });
 
@@ -59,11 +55,7 @@ describe('InsulinCalc Component', () => {
   });
 
   test('calculates correct insulin dose for input 15', async () => {
-    const { getByPlaceholderText, getByRole, findByText } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
-    );
+    const { getByPlaceholderText, getByRole, findByText } = render(InsulinCalculatorComponent());
     const input = getByPlaceholderText('Ex: 30');
 
     fireEvent.changeText(input, '15');
@@ -76,11 +68,7 @@ describe('InsulinCalc Component', () => {
   });
 
   test('calculates correct insulin dose for input 30', async () => {
-    const { getByPlaceholderText, getByRole, findByText } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
-    );
+    const { getByPlaceholderText, getByRole, findByText } = render(InsulinCalculatorComponent());
     const input = getByPlaceholderText('Ex: 30');
 
     fireEvent.changeText(input, '30');
@@ -93,11 +81,7 @@ describe('InsulinCalc Component', () => {
   });
 
   test('calculates "Não foi possível calcular" for values above 75', async () => {
-    const { getByPlaceholderText, getByRole, findByText } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
-    );
+    const { getByPlaceholderText, getByRole, findByText } = render(InsulinCalculatorComponent());
     const input = getByPlaceholderText('Ex: 30');
 
     fireEvent.changeText(input, '80');
@@ -108,9 +92,7 @@ describe('InsulinCalc Component', () => {
 
   test('resets insulin result display when input is cleared', async () => {
     const { getByPlaceholderText, getByRole, getByText, queryByText } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
+      InsulinCalculatorComponent()
     );
     const input = getByPlaceholderText('Ex: 30');
 
@@ -129,9 +111,7 @@ describe('InsulinCalc Component', () => {
 
   test('calls handleTouchOutside when pressing outside the input', () => {
     const { getByPlaceholderText, getByRole, getByText, getByDisplayValue } = render(
-      <NavigationContainer>
-        <InsulinCalc />
-      </NavigationContainer>
+      InsulinCalculatorComponent()
     );
     const input = getByPlaceholderText('Ex: 30');
 
