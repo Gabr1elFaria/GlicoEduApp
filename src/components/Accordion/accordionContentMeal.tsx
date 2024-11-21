@@ -37,7 +37,7 @@ export default function AccordionContentMeal() {
               <IconMug name="mug-hot" size={30} />
             </View>
             <View>
-              <CheckBox isChecked={breakfest} />
+              <CheckBox isChecked={breakfest} testID="breakfest-checkbox" />
             </View>
           </View>
           <View style={style.textBox}>
@@ -52,7 +52,7 @@ export default function AccordionContentMeal() {
               <IconSun name="sun" size={30} />
             </View>
             <View>
-              <CheckBox isChecked={lunch} />
+              <CheckBox isChecked={lunch} testID="lunch-checkbox" />
             </View>
           </View>
           <View style={style.textBox}>
@@ -67,7 +67,7 @@ export default function AccordionContentMeal() {
               <IconMoon name="moon" size={30} />
             </View>
             <View>
-              <CheckBox isChecked={dinner} />
+              <CheckBox isChecked={dinner} testID="dinner-checkbox" />
             </View>
           </View>
           <View style={style.textBox}>
@@ -82,7 +82,7 @@ export default function AccordionContentMeal() {
               <IconApple name="apple" size={30} />
             </View>
             <View>
-              <CheckBox isChecked={snack} />
+              <CheckBox isChecked={snack} testID="snack-checkbox" />
             </View>
           </View>
           <View style={style.textBox}>
