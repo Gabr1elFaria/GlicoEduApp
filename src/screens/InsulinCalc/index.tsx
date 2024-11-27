@@ -92,7 +92,7 @@ export function InsulinCalc() {
           {showInsulinResult && (
             <View style={style.container}>
               <Text style={[style.text, style.textInsulin]}>
-                A dose necessária de insulina para {inputValue} gramas de carboidrato é:
+                A(s) dose(s) necessária(s) de insulina para {inputValue} gramas de carboidrato é(são):
               </Text>
               <Text style={style.textResult}>
                 {textPart1}
